@@ -1,0 +1,444 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'angular-sc-select' ]
+2 info using npm@2.14.4
+3 info using node@v4.1.1
+4 verbose install initial load of c:\previsao-tempo-frontend\package.json
+5 warn package.json previsao-tempo-frontend@1.0.0 No description
+6 warn package.json previsao-tempo-frontend@1.0.0 No README data
+7 verbose installManyTop reading scoped package data from c:\previsao-tempo-frontend\node_modules\angular\package.json
+8 verbose installManyTop reading scoped package data from c:\previsao-tempo-frontend\node_modules\bootstrap\package.json
+9 verbose installManyTop reading scoped package data from c:\previsao-tempo-frontend\node_modules\font-awesome\package.json
+10 verbose installManyTop reading scoped package data from c:\previsao-tempo-frontend\node_modules\live-server\package.json
+11 verbose installManyTop reading scoped package data from c:\previsao-tempo-frontend\node_modules\select2\package.json
+12 verbose installManyTop reading scoped package data from c:\previsao-tempo-frontend\node_modules\select2-bootstrap-css\package.json
+13 info package.json select2@3.5.1 No license field.
+14 info package.json select2-bootstrap-css@1.4.6 license should be a valid SPDX license expression
+15 verbose readDependencies loading dependencies from c:\previsao-tempo-frontend\package.json
+16 silly cache add args [ 'angular-sc-select', null ]
+17 verbose cache add spec angular-sc-select
+18 silly cache add parsed spec Result {
+18 silly cache add   raw: 'angular-sc-select',
+18 silly cache add   scope: null,
+18 silly cache add   name: 'angular-sc-select',
+18 silly cache add   rawSpec: '',
+18 silly cache add   spec: '*',
+18 silly cache add   type: 'range' }
+19 silly addNamed angular-sc-select@*
+20 verbose addNamed "*" is a valid semver range for angular-sc-select
+21 silly addNameRange { name: 'angular-sc-select', range: '*', hasData: false }
+22 silly mapToRegistry name angular-sc-select
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/angular-sc-select
+26 verbose addNameRange registry:https://registry.npmjs.org/angular-sc-select not in flight; fetching
+27 verbose request uri https://registry.npmjs.org/angular-sc-select
+28 verbose request no auth needed
+29 info attempt registry request try #1 at 14:53:36
+30 verbose request id cb14971c229726ad
+31 verbose etag "1UGTJ5W56YCNF2YCX12FOFKMP"
+32 http request GET https://registry.npmjs.org/angular-sc-select
+33 http 304 https://registry.npmjs.org/angular-sc-select
+34 silly get cb [ 304,
+34 silly get   { date: 'Sat, 12 Mar 2016 17:53:37 GMT',
+34 silly get     via: '1.1 varnish',
+34 silly get     'cache-control': 'max-age=300',
+34 silly get     etag: '"1UGTJ5W56YCNF2YCX12FOFKMP"',
+34 silly get     age: '0',
+34 silly get     connection: 'keep-alive',
+34 silly get     'x-served-by': 'cache-iad2122-IAD',
+34 silly get     'x-cache': 'MISS',
+34 silly get     'x-cache-hits': '0',
+34 silly get     'x-timer': 'S1457805217.525052,VS0,VE80',
+34 silly get     vary: 'Accept' } ]
+35 verbose etag https://registry.npmjs.org/angular-sc-select from cache
+36 verbose get saving angular-sc-select to C:\Users\suellen\AppData\Roaming\npm-cache\registry.npmjs.org\angular-sc-select\.cache.json
+37 silly addNameRange number 2 { name: 'angular-sc-select', range: '*', hasData: true }
+38 silly addNameRange versions [ 'angular-sc-select', [ '0.1.0', '0.1.1', '0.1.2', '0.2.0' ] ]
+39 silly addNamed angular-sc-select@0.2.0
+40 verbose addNamed "0.2.0" is a plain semver version for angular-sc-select
+41 silly mapToRegistry name angular-sc-select
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry uri https://registry.npmjs.org/angular-sc-select
+45 verbose addRemoteTarball https://registry.npmjs.org/angular-sc-select/-/angular-sc-select-0.2.0.tgz not in flight; adding
+46 verbose addRemoteTarball [ 'https://registry.npmjs.org/angular-sc-select/-/angular-sc-select-0.2.0.tgz',
+46 verbose addRemoteTarball   '5928a2fbc49c9f14d8cd3cfc6af0d8e84ad6d53a' ]
+47 info retry fetch attempt 1 at 14:53:37
+48 info attempt registry request try #1 at 14:53:37
+49 http fetch GET https://registry.npmjs.org/angular-sc-select/-/angular-sc-select-0.2.0.tgz
+50 http fetch 200 https://registry.npmjs.org/angular-sc-select/-/angular-sc-select-0.2.0.tgz
+51 silly fetchAndShaCheck shasum 5928a2fbc49c9f14d8cd3cfc6af0d8e84ad6d53a
+52 verbose addTmpTarball C:\Users\suellen\AppData\Local\Temp\npm-5920-63d029fd\registry.npmjs.org\angular-sc-select\-\angular-sc-select-0.2.0.tgz not in flight; adding
+53 verbose addTmpTarball already have metadata; skipping unpack for angular-sc-select@0.2.0
+54 silly cache afterAdd angular-sc-select@0.2.0
+55 verbose afterAdd C:\Users\suellen\AppData\Roaming\npm-cache\angular-sc-select\0.2.0\package\package.json not in flight; writing
+56 verbose afterAdd C:\Users\suellen\AppData\Roaming\npm-cache\angular-sc-select\0.2.0\package\package.json written
+57 silly install resolved [ { name: 'angular-sc-select',
+57 silly install resolved     version: '0.2.0',
+57 silly install resolved     description: 'An opinionated wrapper around the ui-select module',
+57 silly install resolved     webpack: 'src/module.js',
+57 silly install resolved     browser: 'dist/sc-select.js',
+57 silly install resolved     scripts:
+57 silly install resolved      { test: 'karma start',
+57 silly install resolved        'test:watch': 'karma start --watch',
+57 silly install resolved        start: 'webpack-dev-server',
+57 silly install resolved        'build:unmin': 'webpack --config webpack.build.config.js',
+57 silly install resolved        'build:min': 'webpack -p --config webpack.build.config.js',
+57 silly install resolved        build: 'npm run build:unmin && npm run build:min' },
+57 silly install resolved     repository:
+57 silly install resolved      { type: 'git',
+57 silly install resolved        url: 'git+https://github.com/singlecomm/angular-sc-select.git' },
+57 silly install resolved     author: '',
+57 silly install resolved     license: 'MIT',
+57 silly install resolved     bugs: { url: 'https://github.com/singlecomm/angular-sc-select/issues' },
+57 silly install resolved     homepage: 'https://github.com/singlecomm/angular-sc-select#readme',
+57 silly install resolved     devDependencies:
+57 silly install resolved      { 'angular-mocks': '~1.4.5',
+57 silly install resolved        'babel-core': '~5.8.23',
+57 silly install resolved        'babel-loader': '~5.3.2',
+57 silly install resolved        'css-loader': '~0.21.0',
+57 silly install resolved        eslint: '~1.8.0',
+57 silly install resolved        'eslint-config-mwl': '~0.3.0',
+57 silly install resolved        'eslint-loader': '~1.1.1',
+57 silly install resolved        'exports-loader': '~0.6.2',
+57 silly install resolved        'extract-text-webpack-plugin': '~0.8.2',
+57 silly install resolved        'file-loader': '~0.8.4',
+57 silly install resolved        'isparta-loader': '~1.0.0',
+57 silly install resolved        jquery: '~2.1.4',
+57 silly install resolved        karma: '~0.13.9',
+57 silly install resolved        'karma-chai-plugins': '~0.6.0',
+57 silly install resolved        'karma-coverage': '~0.5.1',
+57 silly install resolved        'karma-mocha': '~0.2.0',
+57 silly install resolved        'karma-phantomjs-launcher': '~0.2.1',
+57 silly install resolved        'karma-phantomjs2-launcher': '~0.3.2',
+57 silly install resolved        'karma-sourcemap-loader': '~0.3.5',
+57 silly install resolved        'karma-webpack': '~1.7.0',
+57 silly install resolved        mocha: '~2.3.0',
+57 silly install resolved        'ng-annotate-loader': '0.0.10',
+57 silly install resolved        phantomjs: '~1.9.18',
+57 silly install resolved        'style-loader': '~0.13.0',
+57 silly install resolved        'url-loader': '~0.5.6',
+57 silly install resolved        webpack: '~1.12.0',
+57 silly install resolved        'webpack-dev-server': '~1.12.1' },
+57 silly install resolved     peerDependencies:
+57 silly install resolved      { angular: '^1.4.5',
+57 silly install resolved        bootstrap: '^3.3.5',
+57 silly install resolved        'font-awesome': '^4.4.0',
+57 silly install resolved        select2: '^3.4.5',
+57 silly install resolved        'select2-bootstrap-css': '^1.4.6',
+57 silly install resolved        'ui-select': '^0.11.2' },
+57 silly install resolved     gitHead: 'd09b85d2e1114d8d6358af601fa19bf0133dd11d',
+57 silly install resolved     _id: 'angular-sc-select@0.2.0',
+57 silly install resolved     _shasum: '5928a2fbc49c9f14d8cd3cfc6af0d8e84ad6d53a',
+57 silly install resolved     _from: 'angular-sc-select@*',
+57 silly install resolved     _npmVersion: '3.3.9',
+57 silly install resolved     _nodeVersion: '5.0.0',
+57 silly install resolved     _npmUser:
+57 silly install resolved      { name: 'mattlewis92',
+57 silly install resolved        email: 'matthew.lewis@socialsignin.co.uk' },
+57 silly install resolved     dist:
+57 silly install resolved      { shasum: '5928a2fbc49c9f14d8cd3cfc6af0d8e84ad6d53a',
+57 silly install resolved        tarball: 'http://registry.npmjs.org/angular-sc-select/-/angular-sc-select-0.2.0.tgz' },
+57 silly install resolved     maintainers: [ [Object] ],
+57 silly install resolved     directories: {},
+57 silly install resolved     _resolved: 'https://registry.npmjs.org/angular-sc-select/-/angular-sc-select-0.2.0.tgz' } ]
+58 info install angular-sc-select@0.2.0 into c:\previsao-tempo-frontend
+59 info installOne angular-sc-select@0.2.0
+60 verbose installOne of angular-sc-select to c:\previsao-tempo-frontend not in flight; installing
+61 verbose lock using C:\Users\suellen\AppData\Roaming\npm-cache\_locks\angular-sc-select-2d3a257d1816c44c.lock for c:\previsao-tempo-frontend\node_modules\angular-sc-select
+62 silly install write writing angular-sc-select 0.2.0 to c:\previsao-tempo-frontend\node_modules\angular-sc-select
+63 verbose unbuild node_modules\angular-sc-select
+64 silly gentlyRm c:\previsao-tempo-frontend\node_modules\angular-sc-select is being purged from base c:\previsao-tempo-frontend
+65 verbose gentlyRm don't care about contents; nuking c:\previsao-tempo-frontend\node_modules\angular-sc-select
+66 verbose tar unpack C:\Users\suellen\AppData\Roaming\npm-cache\angular-sc-select\0.2.0\package.tgz
+67 verbose tar unpacking to c:\previsao-tempo-frontend\node_modules\angular-sc-select
+68 silly gentlyRm c:\previsao-tempo-frontend\node_modules\angular-sc-select is being purged
+69 verbose gentlyRm don't care about contents; nuking c:\previsao-tempo-frontend\node_modules\angular-sc-select
+70 silly gunzTarPerm modes [ '777', '666' ]
+71 silly gunzTarPerm extractEntry package.json
+72 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+73 silly gunzTarPerm extractEntry .npmignore
+74 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+75 silly gunzTarPerm extractEntry README.md
+76 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+77 silly gunzTarPerm extractEntry LICENSE
+78 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+79 silly gunzTarPerm extractEntry webpack.config.js
+80 silly gunzTarPerm modified mode [ 'webpack.config.js', 420, 438 ]
+81 silly gunzTarPerm extractEntry demo.js
+82 silly gunzTarPerm modified mode [ 'demo.js', 420, 438 ]
+83 silly gunzTarPerm extractEntry karma.conf.js
+84 silly gunzTarPerm modified mode [ 'karma.conf.js', 420, 438 ]
+85 silly gunzTarPerm extractEntry webpack.build.config.js
+86 silly gunzTarPerm modified mode [ 'webpack.build.config.js', 420, 438 ]
+87 silly gunzTarPerm extractEntry bower.json
+88 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+89 silly gunzTarPerm extractEntry .eslintrc
+90 silly gunzTarPerm modified mode [ '.eslintrc', 420, 438 ]
+91 silly gunzTarPerm extractEntry .editorconfig
+92 silly gunzTarPerm modified mode [ '.editorconfig', 420, 438 ]
+93 silly gunzTarPerm extractEntry dist/sc-select.js
+94 silly gunzTarPerm modified mode [ 'dist/sc-select.js', 420, 438 ]
+95 silly gunzTarPerm extractEntry dist/sc-select.min.js
+96 silly gunzTarPerm modified mode [ 'dist/sc-select.min.js', 420, 438 ]
+97 silly gunzTarPerm extractEntry dist/sc-select.css
+98 silly gunzTarPerm modified mode [ 'dist/sc-select.css', 420, 438 ]
+99 silly gunzTarPerm extractEntry dist/sc-select.min.css
+100 silly gunzTarPerm modified mode [ 'dist/sc-select.min.css', 420, 438 ]
+101 silly gunzTarPerm extractEntry dist/sc-select.min.css.map
+102 silly gunzTarPerm modified mode [ 'dist/sc-select.min.css.map', 420, 438 ]
+103 silly gunzTarPerm extractEntry dist/sc-select.min.js.map
+104 silly gunzTarPerm modified mode [ 'dist/sc-select.min.js.map', 420, 438 ]
+105 silly gunzTarPerm extractEntry index.html
+106 silly gunzTarPerm modified mode [ 'index.html', 420, 438 ]
+107 silly gunzTarPerm extractEntry .eslintrc.test
+108 silly gunzTarPerm modified mode [ '.eslintrc.test', 420, 438 ]
+109 silly gunzTarPerm extractEntry src/module.js
+110 silly gunzTarPerm modified mode [ 'src/module.js', 420, 438 ]
+111 silly gunzTarPerm extractEntry src/test.entry.js
+112 silly gunzTarPerm modified mode [ 'src/test.entry.js', 420, 438 ]
+113 silly gunzTarPerm extractEntry src/directives/scOptions.js
+114 silly gunzTarPerm modified mode [ 'src/directives/scOptions.js', 420, 438 ]
+115 silly gunzTarPerm extractEntry src/directives/scOptions.spec.js
+116 silly gunzTarPerm modified mode [ 'src/directives/scOptions.spec.js', 420, 438 ]
+117 silly gunzTarPerm extractEntry src/directives/scSelect.js
+118 silly gunzTarPerm modified mode [ 'src/directives/scSelect.js', 420, 438 ]
+119 silly gunzTarPerm extractEntry src/directives/scSelect.spec.js
+120 silly gunzTarPerm modified mode [ 'src/directives/scSelect.spec.js', 420, 438 ]
+121 silly gunzTarPerm extractEntry src/directives/scSelectPaginator.js
+122 silly gunzTarPerm modified mode [ 'src/directives/scSelectPaginator.js', 420, 438 ]
+123 silly gunzTarPerm extractEntry src/factories/scSelectParser.js
+124 silly gunzTarPerm modified mode [ 'src/factories/scSelectParser.js', 420, 438 ]
+125 silly gunzTarPerm extractEntry src/factories/scSelectParser.spec.js
+126 silly gunzTarPerm modified mode [ 'src/factories/scSelectParser.spec.js', 420, 438 ]
+127 verbose write writing to c:\previsao-tempo-frontend\node_modules\angular-sc-select\package.json
+128 info preinstall angular-sc-select@0.2.0
+129 verbose readDependencies loading dependencies from c:\previsao-tempo-frontend\node_modules\angular-sc-select\package.json
+130 silly prepareForInstallMany adding ui-select@^0.11.2 from angular-sc-select peerDependencies
+131 warn peerDependencies The peer dependency ui-select@^0.11.2 included from angular-sc-select will no
+132 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+133 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+134 verbose readDependencies loading dependencies from c:\previsao-tempo-frontend\node_modules\angular-sc-select\package.json
+135 silly install resolved []
+136 verbose about to build c:\previsao-tempo-frontend\node_modules\angular-sc-select
+137 info build c:\previsao-tempo-frontend\node_modules\angular-sc-select
+138 info linkStuff angular-sc-select@0.2.0
+139 silly linkStuff angular-sc-select@0.2.0 has c:\previsao-tempo-frontend\node_modules as its parent node_modules
+140 verbose linkBins angular-sc-select@0.2.0
+141 verbose linkMans angular-sc-select@0.2.0
+142 verbose rebuildBundles angular-sc-select@0.2.0
+143 info install angular-sc-select@0.2.0
+144 info postinstall angular-sc-select@0.2.0
+145 verbose readDependencies loading dependencies from c:\previsao-tempo-frontend\package.json
+146 verbose targetResolver reading package data from c:\previsao-tempo-frontend\node_modules\angular\package.json
+147 verbose targetResolver reading package data from c:\previsao-tempo-frontend\node_modules\angular-sc-select\package.json
+148 verbose targetResolver reading package data from c:\previsao-tempo-frontend\node_modules\bootstrap\package.json
+149 verbose targetResolver reading package data from c:\previsao-tempo-frontend\node_modules\font-awesome\package.json
+150 verbose targetResolver reading package data from c:\previsao-tempo-frontend\node_modules\live-server\package.json
+151 verbose targetResolver reading package data from c:\previsao-tempo-frontend\node_modules\select2\package.json
+152 verbose targetResolver reading package data from c:\previsao-tempo-frontend\node_modules\select2-bootstrap-css\package.json
+153 verbose targetResolver reading package data from c:\previsao-tempo-frontend\node_modules\.bin\live-server\package.json
+154 verbose targetResolver reading package data from c:\previsao-tempo-frontend\node_modules\.bin\live-server.cmd\package.json
+155 silly cache add args [ 'ui-select@^0.11.2', null ]
+156 verbose cache add spec ui-select@^0.11.2
+157 silly cache add parsed spec Result {
+157 silly cache add   raw: 'ui-select@^0.11.2',
+157 silly cache add   scope: null,
+157 silly cache add   name: 'ui-select',
+157 silly cache add   rawSpec: '^0.11.2',
+157 silly cache add   spec: '>=0.11.2 <0.12.0',
+157 silly cache add   type: 'range' }
+158 silly addNamed ui-select@>=0.11.2 <0.12.0
+159 verbose addNamed ">=0.11.2 <0.12.0" is a valid semver range for ui-select
+160 silly addNameRange { name: 'ui-select', range: '>=0.11.2 <0.12.0', hasData: false }
+161 silly mapToRegistry name ui-select
+162 silly mapToRegistry using default registry
+163 silly mapToRegistry registry https://registry.npmjs.org/
+164 silly mapToRegistry uri https://registry.npmjs.org/ui-select
+165 verbose addNameRange registry:https://registry.npmjs.org/ui-select not in flight; fetching
+166 verbose request uri https://registry.npmjs.org/ui-select
+167 verbose request no auth needed
+168 info attempt registry request try #1 at 14:53:38
+169 verbose etag "BFLEMDU0VBO5BSQNKBCACKUYD"
+170 http request GET https://registry.npmjs.org/ui-select
+171 http 304 https://registry.npmjs.org/ui-select
+172 silly get cb [ 304,
+172 silly get   { date: 'Sat, 12 Mar 2016 17:53:39 GMT',
+172 silly get     via: '1.1 varnish',
+172 silly get     'cache-control': 'max-age=300',
+172 silly get     etag: '"BFLEMDU0VBO5BSQNKBCACKUYD"',
+172 silly get     age: '0',
+172 silly get     connection: 'keep-alive',
+172 silly get     'x-served-by': 'cache-iad2126-IAD',
+172 silly get     'x-cache': 'MISS',
+172 silly get     'x-cache-hits': '0',
+172 silly get     'x-timer': 'S1457805219.095659,VS0,VE405',
+172 silly get     vary: 'Accept' } ]
+173 verbose etag https://registry.npmjs.org/ui-select from cache
+174 verbose get saving ui-select to C:\Users\suellen\AppData\Roaming\npm-cache\registry.npmjs.org\ui-select\.cache.json
+175 silly addNameRange number 2 { name: 'ui-select', range: '>=0.11.2 <0.12.0', hasData: true }
+176 silly addNameRange versions [ 'ui-select',
+176 silly addNameRange   [ '0.11.2',
+176 silly addNameRange     '0.13.2',
+176 silly addNameRange     '0.13.2-amd',
+176 silly addNameRange     '0.15.0-ar',
+176 silly addNameRange     '0.13.3',
+176 silly addNameRange     '0.14.0',
+176 silly addNameRange     '0.14.1',
+176 silly addNameRange     '0.14.2',
+176 silly addNameRange     '0.14.3',
+176 silly addNameRange     '0.14.4',
+176 silly addNameRange     '0.14.5',
+176 silly addNameRange     '0.14.6',
+176 silly addNameRange     '0.14.7',
+176 silly addNameRange     '0.14.10' ] ]
+177 silly addNamed ui-select@0.11.2
+178 verbose addNamed "0.11.2" is a plain semver version for ui-select
+179 silly cache afterAdd ui-select@0.11.2
+180 verbose afterAdd C:\Users\suellen\AppData\Roaming\npm-cache\ui-select\0.11.2\package\package.json not in flight; writing
+181 verbose afterAdd C:\Users\suellen\AppData\Roaming\npm-cache\ui-select\0.11.2\package\package.json written
+182 silly install resolved [ { name: 'ui-select',
+182 silly install resolved     main: 'dist/select.js',
+182 silly install resolved     author: { name: 'http://github.com/angular-ui/ui-select/graphs/contributors' },
+182 silly install resolved     homepage: 'http://github.com/angular-ui/ui-select',
+182 silly install resolved     repository: { url: 'git://github.com/angular-ui/ui-select.git' },
+182 silly install resolved     version: '0.11.2',
+182 silly install resolved     devDependencies:
+182 silly install resolved      { bower: '~1.3',
+182 silly install resolved        del: '~0.1.1',
+182 silly install resolved        'event-stream': '~3.1.0',
+182 silly install resolved        gulp: '~3.8.5',
+182 silly install resolved        'gulp-angular-templatecache': '~1.2.1',
+182 silly install resolved        'gulp-concat': '~2.1.7',
+182 silly install resolved        'gulp-header': '~1.0.2',
+182 silly install resolved        'gulp-footer': '~1.0.5',
+182 silly install resolved        'gulp-jshint': '1.6.4',
+182 silly install resolved        'gulp-minify-css': '~0.3.6',
+182 silly install resolved        'gulp-minify-html': '~0.1.0',
+182 silly install resolved        'gulp-plumber': '^0.6.3',
+182 silly install resolved        'gulp-rename': '~0.2.2',
+182 silly install resolved        'gulp-uglify': '~0.3.1',
+182 silly install resolved        'gulp-util': '^2.2.19',
+182 silly install resolved        'jshint-stylish': '~0.3.0',
+182 silly install resolved        karma: '^0.12.16',
+182 silly install resolved        'karma-chrome-launcher': '^0.1.3',
+182 silly install resolved        'karma-firefox-launcher': '~0.1',
+182 silly install resolved        'karma-jasmine': '~0.2',
+182 silly install resolved        'karma-ng-html2js-preprocessor': '^0.1.0',
+182 silly install resolved        'karma-phantomjs-launcher': '~0.1.4',
+182 silly install resolved        'karma-coverage': '~0.2' },
+182 silly install resolved     scripts: { postinstall: 'bower install', test: 'gulp test' },
+182 silly install resolved     license: 'MIT',
+182 silly install resolved     description: '[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angular-ui/ui-select?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)',
+182 silly install resolved     bugs: { url: 'https://github.com/angular-ui/ui-select/issues' },
+182 silly install resolved     _id: 'ui-select@0.11.2',
+182 silly install resolved     _shasum: '0e9085f8c8b52b0ae2a5e3e81751e5d3abd5e5bb',
+182 silly install resolved     _from: 'ui-select@>=0.11.2 <0.12.0',
+182 silly install resolved     _npmVersion: '2.5.1',
+182 silly install resolved     _nodeVersion: '0.12.1',
+182 silly install resolved     _npmUser: { name: 'aaronroberson', email: 'aaronaroberson@gmail.com' },
+182 silly install resolved     dist:
+182 silly install resolved      { shasum: '0e9085f8c8b52b0ae2a5e3e81751e5d3abd5e5bb',
+182 silly install resolved        tarball: 'http://registry.npmjs.org/ui-select/-/ui-select-0.11.2.tgz' },
+182 silly install resolved     maintainers: [ [Object] ],
+182 silly install resolved     directories: {},
+182 silly install resolved     _resolved: 'https://registry.npmjs.org/ui-select/-/ui-select-0.11.2.tgz',
+182 silly install resolved     readme: 'ERROR: No README data found!' } ]
+183 info install ui-select@0.11.2 into c:\previsao-tempo-frontend
+184 info installOne ui-select@0.11.2
+185 verbose installOne of ui-select to c:\previsao-tempo-frontend not in flight; installing
+186 verbose lock using C:\Users\suellen\AppData\Roaming\npm-cache\_locks\ui-select-c7639bd254bfbe2b.lock for c:\previsao-tempo-frontend\node_modules\ui-select
+187 silly install write writing ui-select 0.11.2 to c:\previsao-tempo-frontend\node_modules\ui-select
+188 verbose unbuild node_modules\ui-select
+189 silly gentlyRm c:\previsao-tempo-frontend\node_modules\ui-select is being purged from base c:\previsao-tempo-frontend
+190 verbose gentlyRm don't care about contents; nuking c:\previsao-tempo-frontend\node_modules\ui-select
+191 verbose tar unpack C:\Users\suellen\AppData\Roaming\npm-cache\ui-select\0.11.2\package.tgz
+192 verbose tar unpacking to c:\previsao-tempo-frontend\node_modules\ui-select
+193 silly gentlyRm c:\previsao-tempo-frontend\node_modules\ui-select is being purged
+194 verbose gentlyRm don't care about contents; nuking c:\previsao-tempo-frontend\node_modules\ui-select
+195 silly gunzTarPerm modes [ '777', '666' ]
+196 silly gunzTarPerm extractEntry package.json
+197 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+198 silly gunzTarPerm extractEntry README.md
+199 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+200 silly gunzTarPerm extractEntry LICENSE
+201 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+202 silly gunzTarPerm extractEntry .bower.json
+203 silly gunzTarPerm modified mode [ '.bower.json', 420, 438 ]
+204 silly gunzTarPerm extractEntry bower.json
+205 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+206 silly gunzTarPerm extractEntry dist/select.js
+207 silly gunzTarPerm modified mode [ 'dist/select.js', 420, 438 ]
+208 silly gunzTarPerm extractEntry dist/select.min.js
+209 silly gunzTarPerm modified mode [ 'dist/select.min.js', 420, 438 ]
+210 silly gunzTarPerm extractEntry dist/select.css
+211 silly gunzTarPerm modified mode [ 'dist/select.css', 420, 438 ]
+212 silly gunzTarPerm extractEntry dist/select.min.css
+213 silly gunzTarPerm modified mode [ 'dist/select.min.css', 420, 438 ]
+214 verbose write writing to c:\previsao-tempo-frontend\node_modules\ui-select\package.json
+215 info preinstall ui-select@0.11.2
+216 verbose readDependencies loading dependencies from c:\previsao-tempo-frontend\node_modules\ui-select\package.json
+217 verbose readDependencies loading dependencies from c:\previsao-tempo-frontend\node_modules\ui-select\package.json
+218 silly install resolved []
+219 verbose about to build c:\previsao-tempo-frontend\node_modules\ui-select
+220 info build c:\previsao-tempo-frontend\node_modules\ui-select
+221 info linkStuff ui-select@0.11.2
+222 silly linkStuff ui-select@0.11.2 has c:\previsao-tempo-frontend\node_modules as its parent node_modules
+223 verbose linkBins ui-select@0.11.2
+224 verbose linkMans ui-select@0.11.2
+225 verbose rebuildBundles ui-select@0.11.2
+226 info install ui-select@0.11.2
+227 info postinstall ui-select@0.11.2
+228 verbose unsafe-perm in lifecycle true
+229 info ui-select@0.11.2 Failed to exec postinstall script
+230 verbose unlock done using C:\Users\suellen\AppData\Roaming\npm-cache\_locks\ui-select-c7639bd254bfbe2b.lock for c:\previsao-tempo-frontend\node_modules\ui-select
+231 verbose unlock done using C:\Users\suellen\AppData\Roaming\npm-cache\_locks\angular-sc-select-2d3a257d1816c44c.lock for c:\previsao-tempo-frontend\node_modules\angular-sc-select
+232 verbose stack Error: ui-select@0.11.2 postinstall: `bower install`
+232 verbose stack Exit status 1
+232 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:214:16)
+232 verbose stack     at emitTwo (events.js:87:13)
+232 verbose stack     at EventEmitter.emit (events.js:172:7)
+232 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+232 verbose stack     at emitTwo (events.js:87:13)
+232 verbose stack     at ChildProcess.emit (events.js:172:7)
+232 verbose stack     at maybeClose (internal/child_process.js:817:16)
+232 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+233 verbose pkgid ui-select@0.11.2
+234 verbose cwd c:\previsao-tempo-frontend
+235 error Windows_NT 10.0.10586
+236 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angular-sc-select"
+237 error node v4.1.1
+238 error npm  v2.14.4
+239 error code ELIFECYCLE
+240 error ui-select@0.11.2 postinstall: `bower install`
+240 error Exit status 1
+241 error Failed at the ui-select@0.11.2 postinstall script 'bower install'.
+241 error This is most likely a problem with the ui-select package,
+241 error not with npm itself.
+241 error Tell the author that this fails on your system:
+241 error     bower install
+241 error You can get their info via:
+241 error     npm owner ls ui-select
+241 error There is likely additional logging output above.
+242 verbose exit [ 1, true ]
+243 verbose unbuild node_modules\ui-select
+244 info preuninstall ui-select@0.11.2
+245 info uninstall ui-select@0.11.2
+246 verbose unbuild rmStuff ui-select@0.11.2 from c:\previsao-tempo-frontend\node_modules
+247 info postuninstall ui-select@0.11.2
+248 silly gentlyRm c:\previsao-tempo-frontend\node_modules\ui-select is being purged from base c:\previsao-tempo-frontend
+249 verbose gentlyRm don't care about contents; nuking c:\previsao-tempo-frontend\node_modules\ui-select
+250 silly vacuum-fs purging c:\previsao-tempo-frontend\node_modules\ui-select
+251 silly vacuum-fs quitting because other entries in c:\previsao-tempo-frontend\node_modules
+252 verbose unbuild node_modules\angular-sc-select
+253 info preuninstall angular-sc-select@0.2.0
+254 info uninstall angular-sc-select@0.2.0
+255 verbose unbuild rmStuff angular-sc-select@0.2.0 from c:\previsao-tempo-frontend\node_modules
+256 info postuninstall angular-sc-select@0.2.0
+257 silly gentlyRm c:\previsao-tempo-frontend\node_modules\angular-sc-select is being purged from base c:\previsao-tempo-frontend
+258 verbose gentlyRm don't care about contents; nuking c:\previsao-tempo-frontend\node_modules\angular-sc-select
+259 silly vacuum-fs purging c:\previsao-tempo-frontend\node_modules\angular-sc-select
+260 silly vacuum-fs quitting because other entries in c:\previsao-tempo-frontend\node_modules
