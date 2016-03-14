@@ -29,8 +29,8 @@
                   	        <option ng-disabled="true"  ng-selected="true" value="">Selecione uma cidade</option>
                   	    </select>
                     </div>
-                    <button type="button" class="btn btn-primary" ng-click="vm.buscar()">Buscar</button>
-                    <button title="Salvar como cidade favorita" type="button" class="btn btn-warning glyphicon glyphicon-star" data-placement="right" ng-click="vm.setCache()"></button>
+                    <button type="button" class="btn btn-primary" ng-disabled="!vm.selectedCidade.value" ng-click="vm.buscar()">Buscar</button>
+                    <button title="Salvar como cidade favorita" type="button" class="btn btn-warning glyphicon glyphicon-star" data-placement="right" ng-click="vm.setCache()" ng-disabled="!vm.selectedCidade.value"></button>
                 <!-- </center> -->
             <div class="panel panel-default" style=" margin-top: 25px;">
                 <div class="panel-heading" style="background-color:#eeeeee  ;">

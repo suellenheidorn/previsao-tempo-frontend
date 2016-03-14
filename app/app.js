@@ -1,11 +1,18 @@
 angular.module('myApp',[])
-.controller('WeatherCtrl', ['$cacheFactory', '$timeout', function($cacheFactory, $timeout){
+.controller('WeatherCtrl', ['$cacheFactory', '$timeout', '$http', function($cacheFactory, $timeout, $http){
     var vm = this;
 
     vm.cache = window.localStorage;
 
     vm.buscar = function() {
-        alert(localStorage.teste);
+        fetchData();
+    }
+
+    function fetchData() {
+        $http.get('http://developers.agenciaideias.com.br/tempo/json/' + vm.selectedCidade.value + '-' +vm.selectedEstado.value)
+        .then(function(data){
+            console.log(data);
+        });
     }
 
     vm.estados = [
@@ -73,6 +80,10 @@ angular.module('myApp',[])
     $timeout(function() {
         vm.getCache();
     });
+
+
+
+    //chart
 
     $('#chart').highcharts({
         chart: {
