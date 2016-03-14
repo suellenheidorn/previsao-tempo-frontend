@@ -18,33 +18,22 @@
             <h1 class="text-center">Weather&Time <small style="color:#1de9b6;">Let's see what's going on</small></h1>
         </div>
         <div class="container">
-
-            <!-- <div class="dropdown"> -->
-               <!--<center> -->
-                      <div class="col-md-4 col-sm-4 col-xs-12">
-                      <select  class="form-control" ng-model="vm.selectedEstado" ng-options="option.display for option in vm.estados">
-                  	    <option ng-disabled="true"  ng-selected="true" value="">Selecione um Estado</option>
-                  	</select>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-12">
-                  	<select  class="form-control" ng-model="vm.selectedCidade" ng-options="option.value for option in vm.cidades | filter:{estado:vm.selectedEstado.value}">
-                  	    <option ng-disabled="true"  ng-selected="true" value="">Selecione uma cidade</option>
-                  	</select>
-                    <!-- <P>{{vm.selectedEstado.value}}</P> -->
-                    <!-- <p>{{vm.selectedCidade.estado}}</p> -->
-                  </div>
-                    <button type="button" class="btn btn-primary">Buscar</button>
-                    <button title="Salvar como cidade favorita" type="button" class="btn btn-warning glyphicon glyphicon-star" data-placement="right" ng-click="vm.setCache()"></button><!--</center>-->
-                    <p ng-if="vm.keys.length">Cached Values</p>
-                    <div ng-repeat="key in vm.keys">
-                      <span ng-bind="vm.key"></span>
-                      <span>: </span>
-                      <b ng-bind="vm.cache.get(key).value"></b>
-                      <b ng-bind="vm.cache.get(key).estado"></b>
+                <!-- <center> -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <select  class="form-control" ng-model="vm.selectedEstado" ng-options="option.display for option in vm.estados | orderBy:'display'">
+                  	        <option ng-disabled="true"  ng-selected="true" value="">Selecione um Estado</option>
+                  	    </select>
                     </div>
-            <!-- </div> -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                  	    <select  class="form-control" ng-model="vm.selectedCidade" ng-options="option.value for option in vm.cidades | filter:{estado:vm.selectedEstado.value}  | orderBy:'value'">
+                  	        <option ng-disabled="true"  ng-selected="true" value="">Selecione uma cidade</option>
+                  	    </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" ng-click="vm.buscar()">Buscar</button>
+                    <button title="Salvar como cidade favorita" type="button" class="btn btn-warning glyphicon glyphicon-star" data-placement="right" ng-click="vm.setCache()"></button>
+                <!-- </center> -->
             <div class="panel panel-default" style=" margin-top: 25px;">
-                <div class="panel-heading" style="background-color:#1de9b6;">
+                <div class="panel-heading" style="background-color:#eeeeee  ;">
                     <h3 class="panel-title text-center" style="color: #424242;">Previsão para os próximos dias</h3>
                 </div>
                 <div class="panel-body">
@@ -53,19 +42,15 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="panel panel-default col-md-4 col-sm-4 col-xs-12">
-                        <div class="panel-body"><img src="app/img/arrow_up.png" type="image/png" style="height:100px;" ></div>
-                        <div class="panel-body"><img src="app/img/arrow_down.png" type="image/png" style="height:100px;" ></div>
                     </div>
                     <div class="panel panel-default col-md-4 col-sm-4 col-xs-12">
                         <h5>E então, let's go to the beach?</h5>
                         <div class="panel-body">
                             <img src="app/img/praia.jpg" type="image/jpg" >
-                            <!-- <img src="app/img/positivo.jpg" style="height:100px;" type="image/jpg" > -->
                         </div>
                     </div>
                     <div class="panel panel-default col-md-4 col-sm-4 col-xs-12">
-                        <!-- <h5>Variação da temperatura nos últimos dias</h5> -->
-                        <div id="chart">Placeholder for chart</div>
+                        <div id="chart"></div>
                         <div class="panel-body">
                         </div>
                     </div>
@@ -77,7 +62,6 @@
                 <p class="text-muted text-right" style="color:#fff;">©2016 Weather&Time. All rights reserved.</p>
             </div>
         </footer>
-      <!-- </div> -->
         <!-- {{vm.teste}} -->
         <!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
     </body>
