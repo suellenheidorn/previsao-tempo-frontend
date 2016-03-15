@@ -2,17 +2,97 @@ angular.module('myApp',[])
 .controller('WeatherCtrl', ['$cacheFactory', '$timeout', '$http', function($cacheFactory, $timeout, $http){
     var vm = this;
 
+
+
     vm.cache = window.localStorage;
+
+    vm.general = false;
 
     vm.buscar = function() {
         fetchData();
+        //vm.general = true;
     }
+    vm.previsoes;
+    vm.grafico = {};
+    vm.grafico.legenda = [];
+    vm.grafico.maxima = [];
+    vm.grafico.minima = [];
+    console.log(vm.grafico);
+    vm.agora;
+    vm.cidade = {};
 
     function fetchData() {
         $http.get('http://developers.agenciaideias.com.br/tempo/json/' + vm.selectedCidade.value + '-' +vm.selectedEstado.value)
-        .then(function(data){
-            console.log(data);
+        .then(function(response){
+            //console.log(data);
+            cidade = response.data.cidade;
+            agora = response.data.agora;
+            previsoes = response.data.previsoes;
+            agora.temperatura_max = previsoes[0].temperatura_max;
+            agora.temperatura_min = previsoes[0].temperatura_min;
+            vm.agora = agora;
+            vm.previsoes = previsoes;
+            //
+            vm.general = true;
+            console.log(vm.grafico);
+            for(i = 0; i < previsoes.length; i++){
+              vm.grafico.legenda.push(previsoes[i].data.substring(0,3));
+              vm.grafico.maxima.push(parseInt(previsoes[i].temperatura_max));
+              vm.grafico.minima.push(parseInt(previsoes[i].temperatura_min));
+            }
+
+            //frufru 1
+            arr = vm.grafico.maxima;
+            var i = arr.indexOf(Math.max.apply(Math, arr));
+            //previsoes[i] = previsao com a maior temperatura
+            vm.grafico.maxima[i] = {y: vm.grafico.maxima[i],
+                marker: {
+                    symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+                }
+            };
+
+            //frufru2
+            arr = vm.grafico.minima;
+            var i = arr.indexOf(Math.min.apply(Math, arr));
+            //previsoes[i] = previsao com a menor temperatura
+            vm.grafico.minima[i] = {y: vm.grafico.minima[i],
+                marker: {
+                    symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
+                }
+            };
+
+            //remove a primeira previsao
+            vm.previsoes.splice(0,1);
+
+            console.log(vm.grafico);
+            console.log('maior' + i);
+            // vm.previsao = function(previsoes) {
+            //   return previsoes;
+            // }
+            vm.plotGrafico();
+
+
+            //
+            // vm.estados.value = response.data.cidade;
+            // vm.dataHora = response.data.agora.data_hora;
+            // vm.descricao = response.data.agora.descricao;
+            // vm.temperatura = response.data.agora.temperatura;
+            // vm.umidade = response.data.agora.umidade;
+            // vm.visibilidade = response.data.agora.visibilidade;
+            // vm.ventoVelocidade = response.data.agora.vento_velocidade;
+            // vm.ventoDirecao = response.data.agora.vento_direcao;
+            // vm.pressao = response.data.agora.pressao;
+            // vm.pressaoStatus = response.data.agora.pressao_status;
+            // vm.temperaturaMaxima = response.data.previsoes[0].temperatura_max;
+            // vm.temperaturaMinima = response.data.previsoes[0].temperatura_min;
+            // //terça-feira
+            // vm.dataTerca = response.data.previsoes[1].data;
+            // vm.descricaoTerca = response.data.previsoes[1].descricao;
+            // vm.temperaturaMaximaTerca = response.data.previsoes[1].temperatura_max;
+            // vm.temperaturaMinimaTerca = response.data.previsoes[1].temperatura_min;
+
         });
+
     }
 
     vm.estados = [
@@ -79,13 +159,14 @@ angular.module('myApp',[])
 
     $timeout(function() {
         vm.getCache();
+        vm.buscar();
     });
 
 
 
     //chart
 
-    $('#chart').highcharts({
+    vm.plotGrafico = function(){$('#chart').highcharts({
         chart: {
             type: 'spline'
         },
@@ -96,8 +177,7 @@ angular.module('myApp',[])
         //     text: 'Source: WorldClimate.com'
         // },
         xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            categories: vm.grafico.legenda
         },
         yAxis: {
             title: {
@@ -128,27 +208,28 @@ angular.module('myApp',[])
             marker: {
                 symbol: 'square'
             },
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
-                y: 26.5,
-                marker: {
-                    symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
-                }
-            }, 23.3, 18.3, 13.9, 9.6]
+            data: vm.grafico.maxima
+            //     y: 26.5,
+            //     marker: {
+            //         symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+            //     }
+            // }, 23.3, 18.3, 13.9, 9.6]
 
         }, {
             name: 'Mínimas',
-            //name: 'London',
+            name: 'London',
             marker: {
                 symbol: 'diamond'
             },
-            data: [{
-                y: 3.9,
-                marker: {
-                    symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
-                }
-            }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            data: vm.grafico.minima
+            // [{
+            //     y: 3.9,
+            //     marker: {
+            //         symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
+            //     }
+            // }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
         }]
-    });
+    })};
     //vm.teste = 'aosidoasjduio';
 
         // vm.cache = $cacheFactory('myCache');

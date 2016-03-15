@@ -32,13 +32,51 @@
                     <button type="button" class="btn btn-primary" ng-disabled="!vm.selectedCidade.value" ng-click="vm.buscar()">Buscar</button>
                     <button title="Salvar como cidade favorita" type="button" class="btn btn-warning glyphicon glyphicon-star" data-placement="right" ng-click="vm.setCache()" ng-disabled="!vm.selectedCidade.value"></button>
                 <!-- </center> -->
-            <div class="panel panel-default" style=" margin-top: 25px;">
-                <div class="panel-heading" style="background-color:#eeeeee  ;">
-                    <h3 class="panel-title text-center" style="color: #424242;">Previsão para os próximos dias</h3>
-                </div>
-                <div class="panel-body">
-                </div>
-            </div>
+    <div class="panel panel-default" style=" margin-top: 25px;">
+        <div class="panel-heading" style="background-color:#eeeeee  ;">
+            <h3 class="panel-title text-center" style="color: #424242;">Previsão para os próximos dias</h3>
+        </div>
+      <div class="panel-body" ng-show="vm.general">
+        <div class="col-md-4 col-sm-4 col-xs-12 text-center" >
+          <h3>{{vm.agora.descricao}}</h3>
+          <img ng-src={{vm.agora.imagem}}>
+          <div>
+            {{vm.agora.temperatura}}{{'°C'}}
+          </div>
+          <div>
+            <p><span>{{vm.agora.temperatura_max}}{{'°C'}}</span><i class="glyphicon glyphicon-arrow-up"></i></p>
+            <p><span>{{vm.agora.temperatura_min}}{{'°C'}}<i class="glyphicon glyphicon-arrow-down"></i></p>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-12 align-right">
+          <div class="col-md-3 col-sm-3 col-xs-12" ng-repeat="previsao in vm.previsoes">
+            <p>{{previsao.data}}</p>
+            <img ng-src={{previsao.imagem}}>
+            <!-- <div>{{previsao.imagem}}</div> -->
+            <p><span>{{previsao.temperatura_max}} {{'°C'}}</span><i class="glyphicon glyphicon-arrow-up"></i></p>
+            <p><span>{{previsao.temperatura_min}} {{'°C'}}</span><i class="glyphicon glyphicon-arrow-down"></i></p>
+          </div>
+        </div>
+        <!-- <h5>{{'Data e hora:'}} {{vm.dataHora}}</h5>
+        <p>{{vm.descricao}}</p>
+        <img src="http://developers.agenciaideias.com.br/images/tempo/30.png">
+        <h5>{{'Temperatura:'}} {{vm.temperatura}}{{'°C'}}</h5>
+        <h5>{{'Temperatura máxima:'}} {{vm.temperaturaMaxima}}{{'°C'}}<h5>
+        <h5>{{'Temperatura mínima:'}} {{vm.temperaturaMinima}}{{'°C'}}<h5>
+          <div class="text-center">
+            <p>{{'something here'}}</p>
+          </div>
+        <hr>
+        <h5>{{'Velocidade do vento:'}} {{vm.ventoVelocidade}}</h5>
+        <h5>{{'Direção do vento:'}} {{vm.ventoDirecao}}</h5>
+        <hr>
+        <h5>{{'Umidade:'}} {{vm.umidade}}</h5>
+        <h5>{{'Visibilidade:'}} {{vm.visibilidade}}</h5>
+        <h5>{{'Pressão:'}} {{vm.pressao}} ({{vm.pressaoStatus}})</h5> -->
+        <!-- <h1>{{vm.estados.value}}</h1> -->
+
+      </div>
+    </div>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="panel panel-default col-md-4 col-sm-4 col-xs-12">
