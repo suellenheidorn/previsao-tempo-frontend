@@ -8,7 +8,7 @@
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="icon" href="app/img/clima-tempo.jpg" type="image/jpg">
         <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="bower_components/angular/ngStorage.js"></script>
+        <!-- <script src="bower_components/angular/ngStorage.js"></script> -->
 
         <script src="app/app.js"></script>
     </head>
@@ -18,82 +18,83 @@
             <h1 class="text-center">Weather&Time <small style="color:#1de9b6;">Let's see what's going on</small></h1>
         </div>
         <div class="container">
-                <!-- <center> -->
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <select  class="form-control" ng-model="vm.selectedEstado" ng-options="option.display for option in vm.estados | orderBy:'display'">
-                  	        <option ng-disabled="true"  ng-selected="true" value="">Selecione um Estado</option>
-                  	    </select>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                  	    <select  class="form-control" ng-model="vm.selectedCidade" ng-options="option.value for option in vm.cidades | filter:{estado:vm.selectedEstado.value}  | orderBy:'value'">
-                  	        <option ng-disabled="true"  ng-selected="true" value="">Selecione uma cidade</option>
-                  	    </select>
-                    </div>
-                    <button type="button" class="btn btn-primary" ng-disabled="!vm.selectedCidade.value" ng-click="vm.buscar()">Buscar</button>
-                    <button title="Salvar como cidade favorita" type="button" class="btn btn-warning glyphicon glyphicon-star" data-placement="right" ng-click="vm.setCache()" ng-disabled="!vm.selectedCidade.value"></button>
-                <!-- </center> -->
-    <div class="panel panel-default" style=" margin-top: 25px;">
-        <div class="panel-heading" style="background-color:#eeeeee  ;">
-            <h3 class="panel-title text-center" style="color: #424242;">Previsão para os próximos dias</h3>
-        </div>
-      <div class="panel-body" ng-show="vm.general">
-        <div class="col-md-4 col-sm-4 col-xs-12 text-center" >
-          <h3>{{vm.agora.descricao}}</h3>
-          <img ng-src={{vm.agora.imagem}}>
-          <div>
-            {{vm.agora.temperatura}}{{'°C'}}
-          </div>
-          <div>
-            <p><span>{{vm.agora.temperatura_max}}{{'°C'}}</span><i class="glyphicon glyphicon-arrow-up"></i></p>
-            <p><span>{{vm.agora.temperatura_min}}{{'°C'}}<i class="glyphicon glyphicon-arrow-down"></i></p>
-          </div>
-        </div>
-        <div class="col-md-8 col-sm-8 col-xs-12 align-right">
-          <div class="col-md-3 col-sm-3 col-xs-12" ng-repeat="previsao in vm.previsoes">
-            <p>{{previsao.data}}</p>
-            <img ng-src={{previsao.imagem}}>
-            <!-- <div>{{previsao.imagem}}</div> -->
-            <p><span>{{previsao.temperatura_max}} {{'°C'}}</span><i class="glyphicon glyphicon-arrow-up"></i></p>
-            <p><span>{{previsao.temperatura_min}} {{'°C'}}</span><i class="glyphicon glyphicon-arrow-down"></i></p>
-          </div>
-        </div>
-        <!-- <h5>{{'Data e hora:'}} {{vm.dataHora}}</h5>
-        <p>{{vm.descricao}}</p>
-        <img src="http://developers.agenciaideias.com.br/images/tempo/30.png">
-        <h5>{{'Temperatura:'}} {{vm.temperatura}}{{'°C'}}</h5>
-        <h5>{{'Temperatura máxima:'}} {{vm.temperaturaMaxima}}{{'°C'}}<h5>
-        <h5>{{'Temperatura mínima:'}} {{vm.temperaturaMinima}}{{'°C'}}<h5>
-          <div class="text-center">
-            <p>{{'something here'}}</p>
-          </div>
-        <hr>
-        <h5>{{'Velocidade do vento:'}} {{vm.ventoVelocidade}}</h5>
-        <h5>{{'Direção do vento:'}} {{vm.ventoDirecao}}</h5>
-        <hr>
-        <h5>{{'Umidade:'}} {{vm.umidade}}</h5>
-        <h5>{{'Visibilidade:'}} {{vm.visibilidade}}</h5>
-        <h5>{{'Pressão:'}} {{vm.pressao}} ({{vm.pressaoStatus}})</h5> -->
-        <!-- <h1>{{vm.estados.value}}</h1> -->
-
-      </div>
-    </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="panel panel-default col-md-4 col-sm-4 col-xs-12">
-                    </div>
-                    <div class="panel panel-default col-md-4 col-sm-4 col-xs-12">
-                        <h5>E então, let's go to the beach?</h5>
-                        <div class="panel-body">
-                            <img src="app/img/praia.jpg" type="image/jpg" >
-                        </div>
-                    </div>
-                    <div class="panel panel-default col-md-4 col-sm-4 col-xs-12">
-                        <div id="chart"></div>
-                        <div class="panel-body">
-                        </div>
-                    </div>
-                </div>
+        <!-- <center> -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <select  class="form-control" ng-model="vm.selectedEstado" ng-options="option.display for option in vm.estados | orderBy:'display'">
+          	        <option ng-disabled="true"  ng-selected="true" value="">Selecione um Estado</option>
+          	    </select>
             </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+          	    <select  class="form-control" ng-model="vm.selectedCidade" ng-options="option.value for option in vm.cidades | filter:{estado:vm.selectedEstado.value}  | orderBy:'value'">
+          	        <option ng-disabled="true"  ng-selected="true" value="">Selecione uma cidade</option>
+          	    </select>
+            </div>
+            <button type="button" class="btn btn-primary" ng-disabled="!vm.selectedCidade.value" ng-click="vm.buscar()">Buscar</button>
+            <button title="Salvar como cidade favorita" type="button" class="btn btn-warning glyphicon glyphicon-star" data-placement="right" ng-click="vm.setCache()" ng-disabled="!vm.selectedCidade.value"></button>
+        <!-- </center> -->
+            <div class="panel panel-default" style=" margin-top: 25px;">
+                <div class="panel-heading" style="background-color:#eeeeee  ;">
+                    <h3 class="panel-title text-center" style="color: #424242;">Previsão para os próximos dias</h3>
+                </div>
+              <div class="panel-body" ng-show="vm.general">
+                <div class="col-md-4 col-sm-4 col-xs-12 text-center" >
+                  <h3>{{vm.agora.descricao}}</h3>
+                  <div class="text-center"><img ng-src={{vm.agora.imagem}}></div>
+                  <div>
+                    <span style="vertical-align: middle; overflow:hidden;"><h1>{{vm.agora.temperatura}}{{'°C'}}</h1></span>
+                  </div>
+                  <div>
+                    <p class="text-center"><span>{{vm.agora.temperatura_max}}{{'°C'}}</span><i class="glyphicon glyphicon-arrow-up"></i></p>
+                    <p class="text-center"><span>{{vm.agora.temperatura_min}}{{'°C'}}<i class="glyphicon glyphicon-arrow-down"></i></p>
+                  </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 align-right">
+                  <div class="col-md-3 col-sm-3 col-xs-12" ng-repeat="previsao in vm.previsoes">
+                    <p class="text-center">{{previsao.data}}</p>
+                    <div class="text-center"><img ng-src={{previsao.imagem}}></div>
+                    <p class="text-center"><span>{{previsao.temperatura_max}} {{'°C'}}</span><i class="glyphicon glyphicon-arrow-up"></i></p>
+                    <p class="text-center"><span>{{previsao.temperatura_min}} {{'°C'}}</span><i class="glyphicon glyphicon-arrow-down"></i></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="panel panel-default"> -->
+                <!-- <div class="panel-body"> -->
+                    <div class="panel panel-default col-md-4 col-sm-4 col-xs-12 text-center" ng-show="vm.general" style="height:400px;overflow:auto;position:relative;padding-top:7%;padding-bottom: 7%;display: inline-block;">
+                        <p><h4 class="text-center">{{'Máxima dos próximos dias'}}</h4></p>
+                        <p class="text-center">{{vm.dataMaiorTemp}}</p>
+                        <p class="text-center"><h4 class="text-center">{{vm.maximatemperatura}}{{'°C'}}<i class="glyphicon glyphicon-arrow-up"></i></h4></p>
+                        <hr>
+                        <p><h4 class="text-center">{{'Mínima dos próximos dias'}}</h4></p>
+                        <p class="text-center">{{vm.dataMenorTemp}}</p>
+                        <p class="text-center"><h4 class="text-center">{{vm.minimatemperatura}}{{'°C'}}<i class="glyphicon glyphicon-arrow-up"></i></h4></p>
+                    </div>
+                    <div class="panel panel-default col-md-4 col-sm-4 col-xs-12" ng-show="vm.general" style="height:400px;overflow:hidden;">
+                        <h4 class="text-center">E então, let's go to the beach?</h4>
+                        <div class="panel-body" ng-if="vm.praia" >
+                            <div class="text-center">
+                                <img src="app/img/praia.jpg" type="image/jpg" >
+                            </div>
+                            <h4 class="text-center" ng-if="vm.praia">{{vm.bomPraia}}</h4>
+                        </div>
+                        <div class="panel-body" ng-if="!vm.praia" >
+                            <div ng-if="!vm.praia" class="text-center">
+                                <img src="app/img/praia.jpg" type="image/jpg" >
+                            </div>
+                            <h4 class="text-center" ng-if="!vm.praia">{{vm.bomPraia}}</h4>
+                            <div class="text-center">
+                                <img src="app/img/praia-fail.jpg" type="image/jpg" >
+                            </div>
+                            <h4 class="text-center" ng-if="!vm.praia">{{vm.ruimPraia}}</h4>
+                        </div>
+                    </div>
+                    <div class="panel panel-default col-md-4 col-sm-4 col-xs-12" id="chart" style="height:400px;overflow:hidden;">
+                        <!-- <div class="panel-body"> -->
+                            <!-- <div ></div> -->
+                        <!-- </div> -->
+                    </div>
+                <!-- </div> -->
+            <!-- </div> -->
         </div>
         <footer class="footer" style="padding-top: 30px; padding-bottom:30px;background-color:#00897b; bottom:0px; margin-bottom:0px;">
             <div class="container">
