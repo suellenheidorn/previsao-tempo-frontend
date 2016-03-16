@@ -1,0 +1,66 @@
+.header-subtitle {
+    color: #1de9b6;
+}
+
+.heading-bkgc {
+    background-color: #eeeeee;
+}
+
+.temperature {
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.max-temp {
+    color: #ff3d00;
+}
+
+.min-temp {
+    color: #2196f3;
+}
+
+#footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #00897b;
+    bottom:0px;
+}
+
+.footer-text {
+    color: #fff;
+}
+
+.panel-height {
+    height: 400px;
+}
+
+.panel-first {
+    overflow: auto;
+    position: relative;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    display: inline-block;
+}
+
+.panel-hidden {
+    overflow:hidden;
+}
+
+.top-margin {
+    margin-top: 25px;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}

@@ -1,10 +1,9 @@
 angular.module('myApp',[])
 .controller('WeatherCtrl', ['$cacheFactory', '$timeout', '$http', function($cacheFactory, $timeout, $http){
+
     var vm = this;
 
-
     vm.cache = window.localStorage;
-
     vm.general = false;
     vm.praia = false;
     vm.bomPraia;
@@ -17,45 +16,28 @@ angular.module('myApp',[])
     vm.agora;
     vm.cidade = {};
 
-
     vm.getEstados = function(){
       $http.get('app/estados.json').success(function(data) {
-       //$scope.phones = data;
        vm.estados = data;
-       console.log("passou por estados");
        getCidade();
     })};
 
 
-  vm.buscar =  function () {
-      console.log("entrou em buscar");
+    vm.buscar =  function () {
         fetchData();
-        //vm.general = true;
+        vm.local;
     }
 
-    function getCidade(){
+    function getCidade() {
       $http.get('app/cidades.json').success(function(data) {
-       //$scope.phones = data;
        vm.cidades = data;
-       console.log("passou por cidades");
        getCache();
        vm.buscar();
     })};
 
-
-
-
-    //vm.getEstados();
-    //vm.getCidades();
-
-
-
     function fetchData() {
       $http.get('http://developers.agenciaideias.com.br/tempo/json/' + vm.selectedCidade.value + '-' +vm.selectedEstado.value)
         .then(function(response){
-          console.log('retorno ajaxxxx');
-          console.log(response);
-            //console.log(data);
             cidade = response.data.cidade;
             agora = response.data.agora;
             previsoes = response.data.previsoes;
@@ -63,8 +45,8 @@ angular.module('myApp',[])
             agora.temperatura_min = previsoes[0].temperatura_min;
             vm.agora = agora;
             vm.previsoes = previsoes;
-            //
             vm.general = true;
+            vm.local = vm.selectedCidade.value + '-' +vm.selectedEstado.value;
 
             //reset array cada search
             vm.grafico.legenda = [];
@@ -85,8 +67,8 @@ angular.module('myApp',[])
               for(i = 0; i < previsoes.length; i++){
                 diaSemana = previsoes[i].data; //descricao da semana
                 descTempo = previsoes[i].descricao; //descricao do tempo Bom,Nublado
-                max       = previsoes[i].temperatura_max; //maxima do dia
-                min       = previsoes[i].temperatura_min; //minima do dia
+                max = previsoes[i].temperatura_max; //maxima do dia
+                min = previsoes[i].temperatura_min; //minima do dia
 
                 if((diaSemana.indexOf("bado")>-1) || (diaSemana.indexOf("mingo")>-1)) //sabado ou domingo
                   if(descTempo.indexOf("Bom")>-1)
@@ -95,7 +77,7 @@ angular.module('myApp',[])
               }
             }
 
-            //frufru 1
+            //solzinho da maior temperatura :)
             arr = vm.grafico.maxima;
             var i = arr.indexOf(Math.max.apply(Math, arr));
             //previsao com a maior temperatura
@@ -108,13 +90,12 @@ angular.module('myApp',[])
                 }
             };
 
-            //frufru2
+            //neve no dia mais frio :)
             arr = vm.grafico.minima;
             var i = arr.indexOf(Math.min.apply(Math, arr));
             //previsao com a menor temperatura
             vm.minimatemperatura = arr[i];
             vm.dataMenorTemp = previsoes[i].data;
-            //console.log(previsoes[i].temperatura_min);
             vm.grafico.minima[i] = {y: arr[i],
                 marker: {
                     symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
@@ -124,28 +105,20 @@ angular.module('myApp',[])
             //remove a primeira previsao
             vm.previsoes.splice(0,1);
 
-            // vm.previsao = function(previsoes) {
-            //   return previsoes;
-            // }
             vm.plotGrafico();
 
-            //msg qlquer para praia
+            //mensagem dependendo das condições do tempo
             if(vm.praia)
               vm.bomPraia = "Oba! Vai dar praia!";
             else
-              vm.ruimPraia = "Ah, que pena! Parece que vai chover!";
+              vm.ruimPraia = "Ah, que pena! Parece que não teremos tempo bom";
         });
 
     }
 
-
-
-
-
-    function getCacheEstado(){
-      console.log(vm.estados);
+    function getCacheEstado() {
       if (vm.cache.getItem("selectedEstado") === null)
-        vm.selectedEstado = vm.estados[23]; //seta santa catarina
+        vm.selectedEstado = vm.estados[23]; //define santa catarina default
       else
         vm.selectedEstado = JSON.parse(vm.cache.getItem("selectedEstado"));
     };
@@ -155,7 +128,7 @@ angular.module('myApp',[])
 
     function getCacheCidade(){
       if (vm.cache.getItem("selectedCidade") === null)
-        vm.selectedCidade = vm.cidades[4448]; //seta blumenau
+        vm.selectedCidade = vm.cidades[4448]; //define blumenau default
       else
         vm.selectedCidade = JSON.parse(vm.cache.getItem("selectedCidade"));
     };
@@ -163,29 +136,23 @@ angular.module('myApp',[])
       vm.cache.setItem('selectedCidade',JSON.stringify(vm.selectedCidade));
     };
 
-    vm.setCache = function(){
+    vm.setCache = function() {
       setCacheEstado();
       setCacheCidade();
     };
 
-    function getCache(){
+    function getCache() {
       getCacheEstado();
       getCacheCidade();
     };
 
-    
-    //init
     $timeout(function() {
-      //  vm.getEstados();
-      //  vm.getCidades();
         vm.getEstados();
     });
 
-
-
     //chart
-
     vm.plotGrafico = function(){
+        $timeout(function() {
       options = {
             chart: {
                 renderTo: 'chart',
@@ -244,11 +211,8 @@ angular.module('myApp',[])
             }]
         };
     chart1 = new Highcharts.Chart(options);
-    //var height = chart1.renderTo.clientHeight;
-    //var width = chart1.renderTo.clientWidth;
     console.log(chart1.renderTo);
-  //  chart1.setSize(360,380,false);
-    //chart1.reflow();
+});
 };
 
 
