@@ -18,9 +18,11 @@
             <h1 class="text-center">Weather&Time <small style="color:#1de9b6;">Let's see what's going on</small></h1>
         </div>
         <div class="container">
-        <!-- <center> -->
+          <!-- <center> -->
+          <div class="row">
+
             <div class="col-md-4 col-sm-4 col-xs-12">
-                <select  class="form-control" ng-model="vm.selectedEstado" ng-options="option.display for option in vm.estados | orderBy:'display'">
+                <select class="form-control" ng-model="vm.selectedEstado" ng-options="option.display for option in vm.estados | orderBy: 'display'">
           	        <option ng-disabled="true"  ng-selected="true" value="">Selecione um Estado</option>
           	    </select>
             </div>
@@ -31,6 +33,7 @@
             </div>
             <button type="button" class="btn btn-primary" ng-disabled="!vm.selectedCidade.value" ng-click="vm.buscar()">Buscar</button>
             <button title="Salvar como cidade favorita" type="button" class="btn btn-warning glyphicon glyphicon-star" data-placement="right" ng-click="vm.setCache()" ng-disabled="!vm.selectedCidade.value"></button>
+          </div>
         <!-- </center> -->
             <div class="panel panel-default" style=" margin-top: 25px;">
                 <div class="panel-heading" style="background-color:#eeeeee  ;">
@@ -88,7 +91,7 @@
                             <h4 class="text-center" ng-if="!vm.praia">{{vm.ruimPraia}}</h4>
                         </div>
                     </div>
-                    <div class="panel panel-default col-md-4 col-sm-4 col-xs-12" id="chart" style="height:400px;overflow:hidden;">
+                    <div class="panel panel-default col-md-4 col-sm-4 col-xs-12" id="chart" style="height:400px;">
                         <!-- <div class="panel-body"> -->
                             <!-- <div ></div> -->
                         <!-- </div> -->
