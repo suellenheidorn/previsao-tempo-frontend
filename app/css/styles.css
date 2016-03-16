@@ -64,3 +64,9 @@
     from { transform: scale(1) rotate(0deg);}
     to { transform: scale(1) rotate(360deg);}
 }
+
+.time-loading {
+    height: 600px;
+    overflow:auto;
+    padding-top:200px;
+}
